@@ -1,65 +1,72 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from 'react';
+import Head from 'next/head';
+import '../css/styles.css';
+import { motion } from 'framer-motion';
+import Link from 'next/link'
 
-export default function Home() {
+const index = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+  <React.Fragment>
+    <Head>
+      <title>El-farina</title>
+    </Head>
+    <div className="container">
+      <header>
+        <img src='/img/dugo.png' alt='logo'/>
+        <ul>
+          <li>Product</li>
+          <li>About</li>
+          <li>Career</li>
+          <li>Jobs</li>
+        </ul>
+        <motion.button
+          whileHover={{ scale: 1.1}}
+          whileTap={{scale: 0.9}}
+          > 
+          <img src='/img/elfarina01.svg' alt=""/>
+          <div className="circle">1</div>
+          </motion.button>
+      </header>
+      <div className="contenido">
+        <div className="info">
+          <h1>Welcome to the best website built with Next.js</h1>
+          <span className="name">Pizza box</span>
+          <p>
+            Lorem ipsum dolor sit amet,consectetur adipiscing 
+            elit ut aliquam purus sit amet luctus venenatis, 
+            lectus magna fringilia urna
+          </p>
+          <div className="price">$15.98</div>
+          <motion.button
+          whileHover={{ scale: 1.1}}
+          whileTap={{scale: 0.9}}
+          > 
+          <img src='/img/elfarinawhite.svg' alt=""/>
+          <span>Add to cart</span>
+          </motion.button>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+        <div className="img-container">
+          <img src="/img/dugo.png" alt="Dugo" />
+        </div>
+        <div className="social-buttons">
+          <div className="links">
+            <a href="" target="_blank">Instagram</a>
+            <a href="" target="_blank">Facebook</a>
+          </div>
+          <div>
+            <motion.button
+            whileHover={{ scale:1.1 }}
+            whileTap={{ scale:0.9 }}
+            className="btn-l">
+              <img src="/img/elfarina01.svg" alt="" />
+            </motion.button>
+          </div>
+        </div>
+      </div>
     </div>
+  </React.Fragment>
   )
 }
+
+export default index;
+
